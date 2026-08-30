@@ -1,10 +1,7 @@
 # GPIO
 
 ## Objective
-Learn GPIO configuration and digital output using STM32.
-
-## Hardware
-- STM32 Nucleo
+Learn GPIO configuration and digital output using/on STM32F446RE
 
 ## Concepts
 - GPIO input/output
@@ -12,11 +9,11 @@ Learn GPIO configuration and digital output using STM32.
 - Pull-up/pull-down
 - HAL GPIO functions
 
-## Tutorial
-YouTube tutorial used for learning.
+## Tutorial link
+https://www.youtube.com/watch?v=vKyL43qXPpk&t=1690s
 
-## My implementation
+## Implementation
 Implemented LED blinking and button-controlled LED.
 
-## What I learned
+## Modification
 GPIO pins can be configured as inputs or outputs.
