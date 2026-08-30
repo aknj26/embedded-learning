@@ -1,2 +1,15 @@
 # embedded-learning
-followed tutorials and modifications while learning embedded programming
+Followed tutorials and their modifications while learning embedded programming
+## Learning Path
+- [ ] C fundamentals
+- [ ] GPIO
+- [ ] Interrupts
+- [ ] Timers
+- [ ] PWM
+- [ ] UART
+- [ ] ADC
+- [ ] I2C
+- [ ] SPI
+- [ ] CAN
+- [ ] DMA
+- [ ] FreeRTOS
