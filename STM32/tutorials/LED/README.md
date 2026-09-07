@@ -1,9 +1,9 @@
 # LED
 
 ## Objective
-Turning on an led on STM32F446RE
+Turning on an led on STM32NUCLEOF446RE
 
-## Notes
+## Notes (Using HAL Library)
 - Changed from 48 to 8Mhz under clock configuration
   
   <img width="177" height="106" alt="image" src="https://github.com/user-attachments/assets/5a6c5eba-4add-45b9-bfb3-57f9afb60a58" />
@@ -43,10 +43,24 @@ Turning on an led on STM32F446RE
 - HAL_Delay(500); = pause execution for 500ms.
 - HAL = Hardware Abstraction Layer (ST provides a library called the STM32 HAL, instead of directly manipulating the STM32's hardware registers yourself.)
 
+## Notes (Register level)
+- Register level code to glow an external led for STM32NUCLEOF446RE
+- RCC->AHB1ENR = register inside the STM32's RCC peripheral where AHB1 = one of the STM32's internal buses.
+- RCC_AHB1ENR_GPIOAEN = Enable the clock to GPIOA because STM32 peripherals are generally clock-gated to save power.
+- |= = setting a particular bit without disturbing the other bits.
+- GPIOA->MODER = access GPIOA's mode register.
+- Every GPIO pin has 2 bits in the MODER register eg. PA0 → bits 0,1
+- 00 → Input; 01 → Output; 10 → Alternate Function; 11 → Analog
+- <img width="491" height="195" alt="image" src="https://github.com/user-attachments/assets/43ea92a5-3f0a-4135-b53b-9dea848832a4" />
+- <img width="408" height="402" alt="image" src="https://github.com/user-attachments/assets/34653381-1ac7-4e40-a9de-3d6ccf39f08e" />
+- <img width="375" height="266" alt="image" src="https://github.com/user-attachments/assets/798c88c3-494b-4e01-bf02-7f516bd8ca66" />
+
+
+
 ## Tutorial link
 https://www.youtube.com/watch?v=vKyL43qXPpk&t=1690s
 
-https://www.youtube.com/watch?v=rLtWj2y9niM for led specifically
+https://www.youtube.com/watch?v=rLtWj2y9niM for led using HAL specifically
 
 ## Implementation
 Implemented turning an external LED on and blinking, internal led on (LD2 connected to PA5/D13) and it blinking
